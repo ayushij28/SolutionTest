@@ -15,8 +15,9 @@ jobs:
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: 'https://org80c0c729.crm8.dynamics.com/'
-        user-name: 'ashish@mypersorg.onmicrosoft.com'
-        password-secret: ${{ secrets.MYPASSWORD }}
+        app-id: 'ae393b69-14a9-4076-b470-4be8182aad41'
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: '5bac9eb0-1e6b-463d-8dbb-6ba2477914b9'
         solution-name: GithubTest
         solution-output-file: 'aSolution.zip'
         working-directory: 'out'
@@ -33,8 +34,9 @@ jobs:
       uses: microsoft/powerplatform-actions/publish-solution@v1
       with:
         environment-url: 'https://org5fb7f156.crm8.dynamics.com/'
-        user-name: 'ashish@mypersorg.onmicrosoft.com'
-        password-secret: ${{ secrets.MYPASSWORD }}
+        app-id: 'ae393b69-14a9-4076-b470-4be8182aad41'
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: '5bac9eb0-1e6b-463d-8dbb-6ba2477914b9'
 
     - name: Prepare solution changes for check-in into source control
       uses: microsoft/powerplatform-actions/branch-solution@v1
