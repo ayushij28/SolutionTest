@@ -21,14 +21,6 @@ jobs:
         solution-name: GithubTest
         solution-output-file: 'out/solutions/exported/GithubTest.zip'
 
-    - name: Unpack Solution
-      uses: microsoft/powerplatform-actions/unpack-solution@v1
-      with:
-        solution-file: 'out/solutions/exported/GithubTest.zip'
-        solution-folder: 'out/solutions/'
-        solution-type: 'Unmanaged'
-        overwrite-files: true
-
     - name: Import solution to prod env
       uses: microsoft/powerplatform-actions/import-solution@v1
       with:
@@ -39,6 +31,14 @@ jobs:
         solution-file: 'out/solutions/exported/GithubTest.zip'
         force-overwrite: true
         publish-changes: true
+
+    - name: Unpack Solution
+      uses: microsoft/powerplatform-actions/unpack-solution@v1
+      with:
+        solution-file: 'out/solutions/exported/GithubTest.zip'
+        solution-folder: 'out/solutions/'
+        solution-type: 'Unmanaged'
+        overwrite-files: true
 
     - name: Publish Solution
       uses: microsoft/powerplatform-actions/publish-solution@v1
