@@ -25,7 +25,7 @@ jobs:
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
         solution-file: 'out/solutions/exported/GithubTest.zip'
-        solution-folder: 'out/solutions'
+        solution-folder: 'out/solutions/'
         solution-type: 'Unmanaged'
         overwrite-files: true
 
