@@ -15,18 +15,17 @@ jobs:
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: 'https://org80c0c729.crm8.dynamics.com/'
-        app-id: 'ae393b69-14a9-4076-b470-4be8182aad41'
+        app-id: ae393b69-14a9-4076-b470-4be8182aad41
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: '5bac9eb0-1e6b-463d-8dbb-6ba2477914b9'
+        tenant-id: 5bac9eb0-1e6b-463d-8dbb-6ba2477914b9
         solution-name: GithubTest
-        solution-output-file: 'aSolution.zip'
-        working-directory: 'out'
+        solution-output-file: 'out/solutions/exported/GithubTest.zip'
 
     - name: Unpack Solution
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
-        solution-file: 'out/aSolution1.zip'
-        solution-folder: 'out/solutions/solution one'
+        solution-file: 'out/solutions/exported/GithubTest.zip'
+        solution-folder: 'out/solutions'
         solution-type: 'Unmanaged'
         overwrite-files: true
 
@@ -34,9 +33,8 @@ jobs:
       uses: microsoft/powerplatform-actions/publish-solution@v1
       with:
         environment-url: 'https://org5fb7f156.crm8.dynamics.com/'
-        app-id: 'ae393b69-14a9-4076-b470-4be8182aad41'
-        client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: '5bac9eb0-1e6b-463d-8dbb-6ba2477914b9'
+        user-name: 'ashish@mypersorg.onmicrosoft.com'
+        password-secret: ${{ secrets.MYPASSWORD }}
 
     - name: Prepare solution changes for check-in into source control
       uses: microsoft/powerplatform-actions/branch-solution@v1
