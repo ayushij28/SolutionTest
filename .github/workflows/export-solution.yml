@@ -42,4 +42,4 @@ jobs:
       with:
         solution-folder: 'out/solutions'
         solution-target-folder: 'src/solutions/solution1'
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.TOKEN }}
