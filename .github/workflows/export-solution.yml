@@ -32,14 +32,6 @@ jobs:
         force-overwrite: true
         publish-changes: true
 
-    - name: Unpack Solution
-      uses: microsoft/powerplatform-actions/unpack-solution@v1
-      with:
-        solution-file: 'out/solutions/exported/GithubTest.zip'
-        solution-folder: 'out/solutions/'
-        solution-type: 'Unmanaged'
-        overwrite-files: true
-
     - name: Publish Solution
       uses: microsoft/powerplatform-actions/publish-solution@v1
       with:
